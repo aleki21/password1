@@ -4,7 +4,7 @@ from credentials import Credentials #importing the credentials class
 
 class TestPasswordLockerUser(unittest.TestCase):
     def setUp(self):
-        self.newUser = User("Alex Kimutai","Kimutai101")
+        self.newUser = User("Alex Kimutai","Kimuati101")
     def test_init(self):
         self.assertEqual(self.newUser.user_name,"Alex Kimutai")
         self.assertEqual(self.newUser.login_password,"Kimutai101")
@@ -28,7 +28,7 @@ class TestPasswordLockerCredentials(unittest.TestCase):
 
     def test_init(self):
         self.assertEqual(self.newCredentials.application_name,"Instagram")
-        self.assertEqual(self.newCredentials.username,"alex kimutai")
+        self.assertEqual(self.newCredentials.username,"alexkimutai")
         self.assertEqual(self.newCredentials.password,"password12345")
 
     def test_save_credentials(self):
@@ -40,7 +40,7 @@ class TestPasswordLockerCredentials(unittest.TestCase):
 
     def test_save_multiple_credentials(self):
         self.newCredentials.save_credentials()
-        test_credentials = Credentials("Twitter","@alexkimutai","12345kimutai")
+        test_credentials = Credentials("Twitter","@alexkimutai","12345karanu")
         test_credentials.save_credentials()
         self.assertEqual(len(Credentials.credentials_list),4)
 
@@ -49,7 +49,7 @@ class TestPasswordLockerCredentials(unittest.TestCase):
     
     def test_delete_credentials(self):
         self.newCredentials.save_credentials()
-        test_credentials = Credentials("Twitter","@alexkimutai","12345kimutai")
+        test_credentials = Credentials("Twitter","@alexkimutai","12345karanu")
         test_credentials.save_credentials()
         self.newCredentials.delete_credentials()
         self.assertEqual(len(Credentials.credentials_list),1)
